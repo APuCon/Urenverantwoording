@@ -1,6 +1,18 @@
 # Projecturen Manager
 
-Complete React/Vite-app voor projectbeheer, medewerkersbeheer en urenregistratie per medewerker, datum en van/tot-tijd.
+Complete React/Vite-app voor:
+
+- Projectbeheer
+- Medewerkersbeheer
+- Urenregistratie met datum, van-tijd en tot-tijd
+- Automatische urenberekening
+- Factureerbare en niet-factureerbare uren
+- Facturatieproces met factuurdatum en factuurreferentie
+- Selectietotalen per project en totaal van de volledige facturatieselectie
+- Dashboard voor niet-gefactureerde en gefactureerde uren van deze en vorige week
+- CSV-export en JSON-back-up
+- Lokale browseropslag
+- GitHub Actions deployment naar Azure Static Web Apps
 
 ## Lokaal starten
 
@@ -16,12 +28,7 @@ npm run build
 npm run preview
 ```
 
-## Publiceren op GitHub
-
-1. Maak een lege repository, bijvoorbeeld `projecturen-manager`.
-2. Pak deze ZIP uit.
-3. Open een terminal in de uitgepakte map.
-4. Voer uit:
+## GitHub
 
 ```bash
 git init
@@ -32,26 +39,21 @@ git remote add origin https://github.com/APUCON/projecturen-manager.git
 git push -u origin main
 ```
 
-## Publiceren op Azure Static Web Apps
+## Azure Static Web Apps
 
-Maak in Azure een Static Web App en koppel repository `APUCON/projecturen-manager`, branch `main`.
+Koppel de repository en gebruik:
 
-Gebruik:
-
+- Branch: `main`
 - App location: `/`
 - API location: leeg
 - Output location: `dist`
 
-Azure moet in GitHub een repository secret met naam `AZURE_STATIC_WEB_APPS_API_TOKEN` plaatsen. De meegeleverde workflow gebruikt dit secret.
+Zorg dat GitHub Actions het repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN` bevat.
 
-## Opslag
+## Opslagmodel
 
-Deze versie bewaart projecten en uren in de lokale browseropslag. Dit is geschikt voor een single-user demonstratie. Voor centraal multi-usergebruik is een API en database nodig.
+Deze versie gebruikt `localStorage`. Daardoor zijn gegevens beschikbaar in dezelfde browser op hetzelfde apparaat. Voor gedeeld gebruik door meerdere medewerkers is later een centrale API en database nodig.
 
-## Medewerkersbeheer
+## APu Consultancy huisstijl
 
-Medewerkers kunnen worden aangemaakt, gewijzigd, actief/inactief gezet en verwijderd wanneer er geen urenboekingen aan gekoppeld zijn. Bij uren schrijven wordt een medewerker gekozen uit de medewerkerslijst.
-
-## Facturatieproces
-
-Selecteer openstaande factureerbare uren onder Facturatie, leg factuurdatum en optioneel factuurreferentie vast en markeer de selectie als gefactureerd. Het dashboard toont open en gefactureerde uren voor deze en vorige week.
+De interface gebruikt een zakelijke APu-stijl met diep marineblauw, helder blauw, warme oranje accenten, compacte rechthoekige componenten en een APu-woordmerk in de navigatie.
