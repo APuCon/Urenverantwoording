@@ -51,3 +51,7 @@ Deze versie bewaart projecten en uren in de lokale browseropslag. Dit is geschik
 ## Medewerkersbeheer
 
 Medewerkers kunnen worden aangemaakt, gewijzigd, actief/inactief gezet en verwijderd wanneer er geen urenboekingen aan gekoppeld zijn. Bij uren schrijven wordt een medewerker gekozen uit de medewerkerslijst.
+
+## Facturatieproces
+
+Selecteer openstaande factureerbare uren onder Facturatie, leg factuurdatum en optioneel factuurreferentie vast en markeer de selectie als gefactureerd. Het dashboard toont open en gefactureerde uren voor deze en vorige week.
