@@ -1,0 +1,1 @@
+export default function App(){return <div>Projecturen Manager v2 - plaats hier de pagina code uit Copilot Page.</div>}
