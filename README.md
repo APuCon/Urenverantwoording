@@ -57,3 +57,7 @@ Deze versie gebruikt `localStorage`. Daardoor zijn gegevens beschikbaar in dezel
 ## APu Consultancy huisstijl
 
 De interface gebruikt een zakelijke APu-stijl met diep marineblauw, helder blauw, warme oranje accenten, compacte rechthoekige componenten en een APu-woordmerk in de navigatie.
+
+## Logo
+
+Het aangeleverde APu Consultancy-logo staat in `public/apu-consultancy-logo.png` en wordt in de navigatie gebruikt. `public/favicon.png` wordt als browsericoon gebruikt.
