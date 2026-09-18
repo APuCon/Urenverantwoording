@@ -101,6 +101,37 @@ export default function App() {
 
   if(auth.loading) return <div className="center">Beveiligde applicatie laden...</div>;
   if(!auth.user) return <div className="login"><div><img src="/apu-logo.jpg" alt="APu Consultancy"/><h1>Projecturen Manager</h1><p>Log in met Microsoft om de applicatie te openen.</p><a href="/.auth/login/aad?post_login_redirect_uri=/">Inloggen met Microsoft</a></div></div>;
+  const allowedUsers = [
+  "a.pullens@apuconsultancy.nl"
+];
+
+const currentUser =
+  auth.user?.userDetails?.toLowerCase() || "";
+
+if (!allowedUsers.includes(currentUser)) {
+  return (
+    <div className="login">
+      <div>
+        /apu-logo.jpg
+
+        <h1>Toegang geweigerd</h1>
+
+        <p>
+          Uw account heeft geen toegang tot deze
+          applicatie.
+        </p>
+
+        <p>
+          Neem contact op met APu Consultancy.
+        </p>
+
+        /.auth/logout?post_logout_redirect_uri=/
+          Afmelden
+        </a>
+      </div>
+    </div>
+  );
+}
 
   const saveItem = item => {
     const { type, value } = editor;
