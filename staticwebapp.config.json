@@ -1,1 +1,8 @@
-{"routes":[{"route":"/.auth/login/github","statusCode":404},{"route":"/*","allowedRoles":["authenticated"]}],"responseOverrides":{"401":{"statusCode":302,"redirect":"/.auth/login/aad?post_login_redirect_uri=/"}},"navigationFallback":{"rewrite":"/index.html","exclude":["/.auth/*","/api/*","/assets/*"]}}
+{
+  "navigationFallback":{"rewrite":"/index.html","exclude":["/.auth/*","/assets/*"]},
+  "routes":[
+    {"route":"/.auth/login/github","statusCode":404},
+    {"route":"/*","allowedRoles":["authenticated"]}
+  ],
+  "responseOverrides":{"401":{"statusCode":302,"redirect":"/.auth/login/aad?post_login_redirect_uri=/"}}
+}

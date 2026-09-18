@@ -1,10 +1,6 @@
-# APu Projecturen Manager Secure v2
+# APu Projecturen Manager Secure v3
 
-V2 herstelt toevoegen, bewerken en verwijderen voor projecten, medewerkers en urenregistraties. Projecten en medewerkers met gekoppelde uren worden beschermd tegen verwijderen. Gefactureerde urenregels kunnen niet worden verwijderd. Microsoft-login is verplicht voor de volledige app en API. Azure SQL en Power BI zijn opgenomen.
+Deze gevalideerde frontendversie bevat Microsoft-login, APu-huisstijl, projecten, medewerkers, urenregistratie, bewerken, verwijderen, facturatie, dashboard en een Power BI-pagina. Gegevens blijven voorlopig in browseropslag, passend bij de huidige Azure Static Web App zonder backend.
 
-## Deploy
-1. Voer database/001-create-schema.sql uit.
-2. Configureer SQL_CONNECTION_STRING.
-3. Configureer AZURE_STATIC_WEB_APPS_API_TOKEN in GitHub.
-4. Push de inhoud naar main.
-5. Configureer optioneel VITE_POWER_BI_REPORT_URL.
+## Belangrijk
+Upload de inhoud van deze map naar de root van de bestaande GitHub-repository. De meegeleverde workflow bouwt eerst met Vite en publiceert daarna `dist`.
