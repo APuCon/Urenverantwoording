@@ -99,42 +99,8 @@ export default function App() {
   const selectedGroups = Object.values(selectedEntries.reduce((acc,x)=>{const p=projectById[x.projectId];if(!acc[x.projectId])acc[x.projectId]={id:x.projectId,code:p?.code,name:p?.name,hours:0,value:0};acc[x.projectId].hours+=Number(x.hours);acc[x.projectId].value+=Number(x.hours)*Number(p?.hourlyRate||0);return acc;},{}));
   const metrics = (invoiced, offset) => { const rows=data.entries.filter(x=>x.billable&&Boolean(x.invoiced)===invoiced&&inWeek(x.date,offset)); return {hours:rows.reduce((s,x)=>s+Number(x.hours),0),value:rows.reduce((s,x)=>s+Number(x.hours)*Number(projectById[x.projectId]?.hourlyRate||0),0)}; };
 
-  if (auth.loading) {
-  return ...
-}
-
-if (!auth.user) {
-  return ...
-}
-
-const allowedUsers = [
-  "a.pullens@apuconsultancy.nl"
-];
-
-const currentUser =
-  auth?.user?.userDetails?.toLowerCase() || "";
-
-if (
-  auth.user &&
-  !allowedUsers.includes(currentUser)
-) {
-  return (
-    <div className="login">
-      <div>
-        <h1>Toegang geweigerd</h1>
-        <p>
-          Uw account heeft geen toegang tot deze applicatie.
-        </p>
-        <a
-          href="/.auth/logout?post_logout_redirect_uri=/"
-          className/div>
-    </div>
-  );
-}
-
-return (
-  <div className="app">
-
+  if(auth.loading) return <div className="center">Beveiligde applicatie laden...</div>;
+  if(!auth.user) return <div className="login"><div><img src="/apu-logo.jpg" alt="APu Consultancy"/><h1>Projecturen Manager</h1><p>Log in met Microsoft om de applicatie te openen.</p><a href="/.auth/login/aad?post_login_redirect_uri=/">Inloggen met Microsoft</a></div></div>;
 
   const saveItem = item => {
     const { type, value } = editor;
