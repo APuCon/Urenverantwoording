@@ -1,1 +1,1 @@
-{"name":"api","version":"1.0.0","type":"module","main":"src/functions/data.js","dependencies":{"@azure/functions":"^4.7.0","mssql":"^11.0.1"}}
+{"name":"projecturen-api","version":"2.0.0","type":"module","main":"src/functions/data.js","dependencies":{"@azure/functions":"^4.7.0","mssql":"^11.0.1"}}

@@ -1,8 +1,10 @@
-# Beveiligde APu Projecturen Manager
+# APu Projecturen Manager Secure v2
 
-De volledige site en `/api/*` vereisen de Azure Static Web Apps-rol `authenticated`. Niet-ingelogde bezoekers worden doorgestuurd naar Microsoft Entra ID via `/.auth/login/aad`. GitHub-login is geblokkeerd. De app toont de ingelogde gebruiker en bevat een uitlogknop.
-
-Voor uitsluitend accounts uit één Microsoft Entra-tenant configureert u in Azure Static Web Apps een custom Microsoft Entra ID-provider. De standaardprovider laat Microsoft-accounts authenticeren; de routebeveiliging bepaalt vervolgens dat alleen geauthenticeerde gebruikers de app zien.
+V2 herstelt toevoegen, bewerken en verwijderen voor projecten, medewerkers en urenregistraties. Projecten en medewerkers met gekoppelde uren worden beschermd tegen verwijderen. Gefactureerde urenregels kunnen niet worden verwijderd. Microsoft-login is verplicht voor de volledige app en API. Azure SQL en Power BI zijn opgenomen.
 
 ## Deploy
-Configureer `AZURE_STATIC_WEB_APPS_API_TOKEN`, `SQL_CONNECTION_STRING` en optioneel `VITE_POWER_BI_REPORT_URL`.
+1. Voer database/001-create-schema.sql uit.
+2. Configureer SQL_CONNECTION_STRING.
+3. Configureer AZURE_STATIC_WEB_APPS_API_TOKEN in GitHub.
+4. Push de inhoud naar main.
+5. Configureer optioneel VITE_POWER_BI_REPORT_URL.
