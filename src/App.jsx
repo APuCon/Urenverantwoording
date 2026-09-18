@@ -106,27 +106,27 @@ export default function App() {
 ];
 
 const currentUser =
-  auth.user?.userDetails?.toLowerCase() || "";
+  auth?.user?.userDetails?.toLowerCase() || "";
 
-if (!allowedUsers.includes(currentUser)) {
+if (
+  auth.user &&
+  !allowedUsers.includes(currentUser)
+) {
   return (
     <div className="login">
       <div>
-        /apu-logo.jpg
-
         <h1>Toegang geweigerd</h1>
 
         <p>
-          Uw account heeft geen toegang tot deze
-          applicatie.
+          Uw account heeft geen toegang tot deze applicatie.
         </p>
 
         <p>
           Neem contact op met APu Consultancy.
         </p>
 
-        /.auth/logout?post_logout_redirect_uri=/
-          Afmelden
+        <a
+          href="/.auth/logout?post_logout_      Afmelden
         </a>
       </div>
     </div>
